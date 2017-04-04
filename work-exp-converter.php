@@ -1,8 +1,8 @@
 <?php
 
 class WorkExpConverter {
-  function convert() {
-    return true;
+  function convert($input) {
+    return self::stripDates($input).' ('.self::getStartDate($input).' - '.self::getEndDate($input).')';
   }
 
   function getStartDate($input) {
