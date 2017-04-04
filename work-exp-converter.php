@@ -16,6 +16,10 @@ class WorkExpConverter {
     preg_match($pattern, $input, $endDate);
     return $endDate[1];
   }
+
+  function stripDates($input) {
+    return preg_replace('/ \([^\)]*\)/', '', $input);
+  }
 }
 
 use PHPUnit\Framework\TestCase;
@@ -29,7 +33,7 @@ class WorkExpConverterTest extends TestCase {
       $this->assertEquals($actual, $expected);
   }
 
-  public function testStartDateYearHyphen() {
+  public function testStartDateYearHyphenreplace() {
       $input = "Aim 1999 (2002 - Present) / 2000 Plc (Jan 2005 – Present) / 2020-Vision (May 2009 – Present) / 1986Productions (Apr 2016 - Present)";
       $expected = "2002";
       $actual = WorkExpConverter::getStartDate($input);
@@ -41,7 +45,13 @@ class WorkExpConverterTest extends TestCase {
       $expected = "Present";
       $actual = WorkExpConverter::getEndDate($input);
       $this->assertEquals($actual, $expected);
+  }
 
+  public function testStripDates() {
+      $input = "Aim 1999 (2002 – Present) / 2000 Plc (Jan 2005 – Present) / 2020-Vision (May 2009 – Present) / 1986Productions (Apr 2016 - Present)";
+      $expected = "Aim 1999 / 2000 Plc / 2020-Vision / 1986Productions";
+      $actual = WorkExpConverter::stripDates($input);
+      $this->assertEquals($actual, $expected);
   }
 
   public function testConvertYearToPresent() {
