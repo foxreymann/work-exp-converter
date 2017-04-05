@@ -21,4 +21,4 @@ Aim1999 / 2000 Plc / 2020-Vision / 1986Productions (Nov 2010 - Aug 2016)
 also if it started with Aim1999 (2010 - Feb 2012)
 
 I need
-Aim1999 / 2000 Plc / 2020-Vision / 1986Productions (Nov 2010 - Aug 2016)
+Aim1999 / 2000 Plc / 2020-Vision / 1986Productions (2010 - Aug 2016)
