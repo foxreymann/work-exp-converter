@@ -1,3 +1,10 @@
+# how to use
+
+require the class
+$output = WorkExpConverter::convert($input);
+
+# task
+
 $string = Aim 1999 (2002 – Present) / 2000 Plc (Jan 2005 – Present) /
 2020-Vision (May 2009 – Present) / 1986Productions (Apr 2016 - Present)
 
