@@ -1,6 +1,7 @@
 # how to use
 
 require the class
+
 $output = WorkExpConverter::convert($input);
 
 # task
