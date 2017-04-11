@@ -74,4 +74,18 @@ class WorkExpConverterTest extends TestCase {
       $actual = WorkExpConverter::convert($input);
       $this->assertEquals($actual, $expected);
   }
+
+  public function testConvertLongInput() {
+      $input = "Financial Times (May 2016 – May 2016) / FourFourTwo (Jun 2016 – Jun 2016) / Daily Mail (Dec 2016 – Dec 2016) / The Times (Dec 2016 – Dec 2016) / Telegraph Media Group (Jan 2017 – Jan 2017) / Richmond & Twickenham Times (Jan 2017 – Jan 2017) / The Independent (Apr 2017 – Apr 2017)";
+      $expected = "Financial Times / FourFourTwo / Daily Mail / The Times / Telegraph Media Group / Richmond & Twickenham Times / The Independent (May 2016 - Apr 2017)";
+      $actual = WorkExpConverter::convert($input);
+      $this->assertEquals($actual, $expected);
+  }
+
+  public function testConvertOneJob() {
+      $input = "All Out Cricket (Jul 2014 – Present)";
+      $expected = "All Out Cricket (Jul 2014 - Present)";
+      $actual = WorkExpConverter::convert($input);
+      $this->assertEquals($actual, $expected);
+  }
 }

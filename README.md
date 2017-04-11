@@ -30,3 +30,14 @@ also if it started with Aim1999 (2010 - Feb 2012)
 
 I need
 Aim1999 / 2000 Plc / 2020-Vision / 1986Productions (2010 - Aug 2016)
+
+# bug reports
+
+tested on:
+All Out Cricket (Jul 2014 – Present)
+
+and also:
+Financial Times (May 2016 – May 2016) / FourFourTwo (Jun 2016 – Jun 2016)
+/ Daily Mail (Dec 2016 – Dec 2016) / The Times (Dec 2016 – Dec 2016) /
+Telegraph Media Group (Jan 2017 – Jan 2017) / Richmond & Twickenham Times
+(Jan 2017 – Jan 2017) / The Independent (Apr 2017 – Apr 2017)
