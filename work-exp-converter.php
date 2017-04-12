@@ -14,7 +14,7 @@ class WorkExpConverter {
   function getEndDate($input) {
     $pattern = '/[–-]{1} ([a-zA-Z0-9 ]*)\)$/';
     preg_match($pattern, $input, $endDate);
-    return $endDate[1];
+    return array_key_exists(1, $endDate) ? $endDate[1] : false;
   }
 
   function stripDates($input) {
@@ -37,6 +37,13 @@ class WorkExpConverterTest extends TestCase {
       $input = "";
       $expected = false;
       $actual = WorkExpConverter::getStartDate($input);
+      $this->assertEquals($actual, $expected);
+  }
+
+  public function testEndDateEmpty() {
+      $input = "";
+      $expected = false;
+      $actual = WorkExpConverter::getEndDate($input);
       $this->assertEquals($actual, $expected);
   }
 
