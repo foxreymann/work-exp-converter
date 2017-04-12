@@ -2,7 +2,13 @@
 
 class WorkExpConverter {
   function convert($input) {
-    return self::stripDates($input).' ('.self::getStartDate($input).' - '.self::getEndDate($input).')';
+    $output = self::stripDates($input);
+    $startDate = self::getStartDate($input);
+    $endDate = self::getEndDate($input);
+    if($startDate && $endDate) {
+      $output .= ' ('.$startDate.' - '.$endDate.')';
+    }
+    return $output;
   }
 
   function getStartDate($input) {
@@ -44,6 +50,20 @@ class WorkExpConverterTest extends TestCase {
       $input = "";
       $expected = false;
       $actual = WorkExpConverter::getEndDate($input);
+      $this->assertEquals($actual, $expected);
+  }
+
+  public function testConvertEmpty() {
+      $input = "";
+      $expected = "";
+      $actual = WorkExpConverter::convert($input);
+      $this->assertEquals($actual, $expected);
+  }
+
+  public function testConvertNoDate() {
+      $input = "Fox Networks / Roxhill Media";
+      $expected = "Fox Networks / Roxhill Media";
+      $actual = WorkExpConverter::convert($input);
       $this->assertEquals($actual, $expected);
   }
 
